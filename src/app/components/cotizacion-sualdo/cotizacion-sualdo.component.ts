@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { developmentTeamData } from '../../data/role';
+
 @Component({
   selector: 'cotizacion-sualdo',
   standalone: true,
@@ -35,13 +37,13 @@ export class CotizacionSualdoComponent {
     return this.redondear(costoHora);
   }
 
-  tiempoDesarrolloProyectHoras(): number {
+  tiempoDesarrolloHoras(): number {
     return this.tiempoDesarrolloMes * this.horasMes;
   }
 
   sueldoTotalProyecto(): number {
-    const sueldoM: number = this.sueldoMensualDev()
-    const sueldoProyecto: number = (sueldoM * this.numeroDesarrolladores) * this.tiempoDesarrolloProyectHoras();
+    const devHoraSualdoMensual:number = this.sueldoHoraDev() * this.numeroDesarrolladores;
+    const sueldoProyecto: number = devHoraSualdoMensual * this.tiempoDesarrolloHoras();
     return this.redondear(sueldoProyecto);
   }
 

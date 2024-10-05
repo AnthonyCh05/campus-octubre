@@ -1,4 +1,23 @@
-<div>
+<div class="container">
+  <h2>Equipo de Desarrollo</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Rol</th>
+        <th>Salario Mensual</th>
+        <th>Cantidad de Personas</th>
+        <th>Costo por Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of cotizacion.developmentTeam">
+        <td>{{ role.role }}</td>
+        <td>{{ sueldoMensualPorRol(role) | currency:'USD' }}</td>
+        <td>{{ role.quantityPerson }}</td>
+        <td>{{ sueldoHoraPorRol(role) | currency:'USD' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <cotizacion-sualdo></cotizacion-sualdo>
+  <h3>Sueldo Total del Proyecto: {{ sueldoTotalProyecto() | currency:'USD' }}</h3>
 </div>

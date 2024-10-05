@@ -1,6 +1,6 @@
 import { DevelopmentTeam } from "../model/DevelopmentTeam";
 
-export const developmentTEamData: DevelopmentTeam = {
+export const developmentTeamData: DevelopmentTeam = {
   developmentTeam: [
     {
       role: "Gerente",
