@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { developmentTeamData } from '../data/role';
-import { DevelopmentTeam } from '../model/DevelopmentTeam';
+import { Cotizacion } from '../model/Cotizacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CotizacionService {
-  private cotizacion: DevelopmentTeam = developmentTeamData;
+  private cotizacion: Cotizacion = developmentTeamData;
 
   constructor() { }
 
-  getCotizacion(): DevelopmentTeam{
+  getCotizacion(): Cotizacion{
     return this.cotizacion;
   }
 }

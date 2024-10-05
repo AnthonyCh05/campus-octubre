@@ -1,23 +1,58 @@
 <div class="container">
   <h2>Equipo de Desarrollo</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Rol</th>
-        <th>Salario Mensual</th>
-        <th>Cantidad de Personas</th>
-        <th>Costo por Hora</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let role of cotizacion.developmentTeam">
-        <td>{{ role.role }}</td>
-        <td>{{ sueldoMensualPorRol(role) | currency:'USD' }}</td>
-        <td>{{ role.quantityPerson }}</td>
-        <td>{{ sueldoHoraPorRol(role) | currency:'USD' }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card my-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre Rol</th>
+          <th>Sualdo</th>
+          <th>Salario Mensual</th>
+          <th>Sueldo por Hora</th>
+          <th>Sueldo Total del Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let role of cotizacion.desarrolladorTeam">
+          <td>{{ role.nameRole }}</td>
+          <td>{{ role.salary }}</td>
+          <td>{{ sueldoMensualPorRol(role) | currency : "USD" }}</td>
+          <td>{{ sueldoHoraPorRol(role) | currency : "USD" }}</td>
+          <td>{{ sueldoTotalPorRol(role) | currency : "USD" }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Total Mano Obra: {{ totalManoObra | currency : "USD" }}</p>
+  </div>
+  <h3>Gatos extras</h3>
+  <div class="card my-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Costos mensuales</th>
+          <th>Costos Proyecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let gasto of cotizacion.gastosExtras">
+          <td>{{ gasto.nombreGasto }}</td>
+          <td>{{ gasto.costoMensual }}</td>
+          <td>{{ gastoExtraConcantidad(gasto) | currency : "USD" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <h3>Sueldo Total del Proyecto: {{ sueldoTotalProyecto() | currency:'USD' }}</h3>
+  <div>
+    <h3>Subtotal del prpyecto: 19555.85</h3>
+  </div>
+  <div>
+    <h3>Porcentaje utilidad: 30%</h3>
+  </div>
+  <div>
+    <h3>Precio: 28758.60</h3>
+  </div>
+  <div>
+    <h3>Utilidad: 9202.75</h3>
+  </div>
 </div>

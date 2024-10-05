@@ -1,6 +1,6 @@
 
 export class Role{
-  role!: string;
+  nameRole!: string;
   salary!: number;
   quantityPerson!: number;
 }

@@ -1,31 +1,49 @@
-import { DevelopmentTeam } from "../model/DevelopmentTeam";
+import { Cotizacion } from "../model/Cotizacion";
 
-export const developmentTeamData: DevelopmentTeam = {
-  developmentTeam: [
+export const developmentTeamData: Cotizacion = {
+  desarrolladorTeam: [
     {
-      role: "Gerente",
+      nameRole: "Gerente",
       salary: 600,
       quantityPerson: 1
     },
     {
-      role: "Gerente",
+      nameRole: "Gerente",
       salary: 600,
       quantityPerson: 1
     },
     {
-      role: "Lider Tecnico",
-      salary: 600,
+      nameRole: "Lider Tecnico",
+      salary: 500,
       quantityPerson: 1
     },
     {
-      role: "Desarrolladores",
+      nameRole: "Desarrolladores",
       salary: 600,
       quantityPerson: 4
     },
     {
-      role: "DevOps",
-      salary: 600,
+      nameRole: "DevOps",
+      salary: 500,
       quantityPerson: 1
+    },
+  ],
+  mesDuracion: 3,
+  gastosExtras: [
+    {
+      nombreGasto: "Internet",
+      costoMensual: 45,
+      cantidadDispositivos: 0
+    },
+    {
+      nombreGasto: "Alquiler Laptops",
+      costoMensual: 50,
+      cantidadDispositivos: 8
+    },
+    {
+      nombreGasto: "Arriendo",
+      costoMensual: 450,
+      cantidadDispositivos: 0
     },
   ]
 }
